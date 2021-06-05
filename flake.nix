@@ -6,7 +6,7 @@
   inputs.home-manager.url = "github:nix-community/home-manager";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = { self, nix, home-manager }:
+  outputs = { self, nix, nixpkgs, home-manager }:
     {
       nixosModules.home-user =
         { pkgs, ... }:
