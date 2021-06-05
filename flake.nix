@@ -4,7 +4,7 @@
   inputs.nixpkgs.follows = "nix/nixpkgs";
 
   inputs.home-manager.url = "github:nix-community/home-manager";
-  inputs.home-manager.inputs.nixpkgs.follows = "nix/nixpkgs";
+  inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = { self, nix, home-manager }:
     {
