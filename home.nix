@@ -5,13 +5,8 @@
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "han";
-  home.homeDirectory = if pkgs.stdenv.isDarwin then "/Users/han" else "/home/han";
-
-  home.packages = with pkgs; [] ++ lib.optionals stdenv.isDarwin [
-    # Ensure at least bash v4 on macOS for zsh-nix-shell - https://github.com/chisui/zsh-nix-shell/issues/14
-    bash
-  ];
+  home.username = "welteki";
+  home.homeDirectory = "/home/welteki";
 
   programs = {
     git = {
@@ -27,21 +22,12 @@
         pu = "push";
         mff = "merge --ff-only";
       };
-      ignores = [
-        # macOS.gitignore source:https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
-        # General
-        ".DS_Store"
-        ".AppleDouble"
-        ".LSOverride"
-
-        # Thumbnails
-        "._*"
-      ];
+      ignores = [ ];
       extraConfig = {
         init.defaultBranch = "main";
       };
     };
-    
+
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -73,7 +59,7 @@
           . ~/.nix-profile/etc/profile.d/nix.sh;
         fi # added by Nix installer
         export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
-        '';
+      '';
     };
 
     direnv = {
