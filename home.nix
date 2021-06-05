@@ -6,7 +6,7 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "welteki";
-  home.homeDirectory = "home/welteki";
+  home.homeDirectory = "/home/welteki";
 
   programs = {
     git = {
@@ -22,12 +22,12 @@
         pu = "push";
         mff = "merge --ff-only";
       };
-      ignores = [];
+      ignores = [ ];
       extraConfig = {
         init.defaultBranch = "main";
       };
     };
-    
+
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -59,7 +59,7 @@
           . ~/.nix-profile/etc/profile.d/nix.sh;
         fi # added by Nix installer
         export NIX_PATH=$HOME/.nix-defexpr/channels''${NIX_PATH:+:}$NIX_PATH
-        '';
+      '';
     };
 
     direnv = {
