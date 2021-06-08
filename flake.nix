@@ -50,7 +50,7 @@
               RestartSec = 0;
               ExecStart = pkgs.writeShellScript "${name}.sh" ''
                 set -euo pipefail
-                PATH=${lib.makeBinPath (with pkgs; [ coreutils inotify-tools ])}
+                PATH=${lib.makeBinPath (with pkgs; [ coreutils findutils inotify-tools ])}
                 bin_dir=~/.vscode-server/bin
                 [[ -e $bin_dir ]] &&
                 find "$bin_dir" -mindepth 2 -maxdepth 2 -name node -type f -exec ln -sfT ${nodePath} {} \; ||
