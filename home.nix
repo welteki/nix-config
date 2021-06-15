@@ -18,13 +18,16 @@
         ci = "commit";
         cia = "commit --amend";
         st = "status";
+        s = "status";
         b = "branch";
+        p = "pull --rebase";
         pu = "push";
         mff = "merge --ff-only";
       };
       ignores = [ ];
       extraConfig = {
         init.defaultBranch = "main";
+        core.editor = "vim";
       };
     };
 
@@ -66,6 +69,8 @@
       enable = true;
       enableZshIntegration = true;
     };
+
+    vim.enable = true;
 
     starship = {
       enable = true;
