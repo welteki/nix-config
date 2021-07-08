@@ -23,6 +23,8 @@
         p = "pull --rebase";
         pu = "push";
         mff = "merge --ff-only";
+        l = "log";
+        lo = "log --oneline";
       };
       ignores = [ ];
       extraConfig = {
